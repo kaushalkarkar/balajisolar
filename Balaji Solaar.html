@@ -1,0 +1,620 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Balaji Solaar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: a clean installer's site — white page, navy structure taken from the logo, saffron reserved for actions, sun-gold for highlights. Light only. */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --tint:#F3F7FC; --tint-2:#E9F0FA;
+  --ink:#0E1F3D; --muted:#55627A; --line:#DCE4F0;
+  --navy:#0B2A5B; --navy-2:#13407F; --on-navy:#FFFFFF; --on-navy-muted:#B9CAE6;
+  --accent:#F47B20; --accent-dark:#D9620B; --accent-soft:#FFF1E5; --gold:#FFC20E;
+  --green:#1C8A4C; --wa:#1FA855;
+  --f-head:'Poppins','Segoe UI',system-ui,sans-serif;
+  --f-body:'Nunito Sans','Segoe UI',system-ui,sans-serif;
+  --r:12px; --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--f-head);color:var(--ink);line-height:1.2;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;letter-spacing:-.01em}
+h3{font-size:20px;font-weight:600}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.kicker{font:600 13px var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.lead{color:var(--muted);font-size:18px;max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:8px;font:600 16px var(--f-head);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-outline{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#178A45}
+svg.i{width:22px;height:22px;flex:none}
+section{padding-block:84px}
+.sec-head{display:grid;gap:10px;margin-bottom:40px;max-width:720px}
+.sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
+.ph{color:var(--muted);font-style:italic}
+
+/* top bar */
+.topbar{background:var(--navy);color:var(--on-navy-muted);font-size:14px}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center;padding-block:8px}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar svg{width:15px;height:15px;color:var(--gold)}
+.topbar .grow{margin-left:auto}
+@media (max-width:720px){.topbar .hide-sm{display:none}.topbar .grow{margin-left:0}}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:24px;min-height:74px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.brand svg{width:50px;height:50px}
+.brand b{font:800 21px var(--f-head);color:var(--navy);letter-spacing:.01em;white-space:nowrap;line-height:1}
+.brand b span{color:var(--accent)}
+.brand small{display:block;font:600 10px var(--f-head);letter-spacing:.2em;color:var(--muted);margin-top:4px}
+nav.main{display:flex;gap:26px;font:500 15px var(--f-head)}
+nav.main a{text-decoration:none;color:var(--ink)}
+nav.main a:hover{color:var(--accent)}
+header .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:1000px){nav.main{display:none}}
+@media (max-width:440px){.brand b{font-size:17px}.brand svg{width:40px;height:40px}.brand small{display:none}header .btn{padding:0 12px;font-size:14px}}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--tint) 0%,var(--bg) 100%);padding-block:64px 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,4.6vw,52px);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.hero .lead{margin-top:18px}
+.ticks{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.ticks li{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.ticks svg{width:22px;height:22px;color:var(--green);flex:none;margin-top:2px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-art{position:relative;min-width:0}
+.hero-art>svg{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto;filter:drop-shadow(0 24px 40px rgba(11,42,91,.14))}
+.tag{position:absolute;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:0 12px 28px rgba(11,42,91,.14);font-size:13px;line-height:1.3;color:var(--muted)}
+.tag strong{display:block;font:700 19px var(--f-head);color:var(--navy);font-variant-numeric:tabular-nums}
+.tag.t1{left:-8px;top:42%}.tag.t2{right:-6px;bottom:6%}
+.tag.t2 strong{color:var(--green)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.tag.t1{left:4px}.tag.t2{right:4px}}
+
+/* highlights strip */
+.strip{border-block:1px solid var(--line);background:var(--bg);padding-block:0}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{display:flex;gap:14px;align-items:center;padding:26px 18px;border-left:1px solid var(--line)}
+.strip div:first-child{border-left:0;padding-left:0}
+.strip .ic{width:48px;height:48px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.strip .ic svg{width:24px;height:24px}
+.strip b{display:block;font:600 16px var(--f-head);color:var(--navy)}
+.strip span{font-size:14px;color:var(--muted);line-height:1.4}
+@media (max-width:960px){.strip .wrap{grid-template-columns:1fr 1fr}.strip div:nth-child(3){border-left:0;padding-left:0}.strip div{border-top:1px solid var(--line)}.strip div:nth-child(-n+2){border-top:0}}
+@media (max-width:560px){.strip .wrap{grid-template-columns:1fr}.strip div{border-left:0;padding-left:0;border-top:1px solid var(--line)}.strip div:first-child{border-top:0}}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about p+p{margin-top:14px}
+.about p{color:var(--muted)}
+.handle{background:var(--navy);color:var(--on-navy);border-radius:16px;padding:34px;position:relative;overflow:hidden}
+.handle::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,194,14,.35),transparent 70%)}
+.handle h3{color:#fff;margin-bottom:18px}
+.handle ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;position:relative}
+.handle li{display:flex;gap:12px;color:var(--on-navy-muted)}
+.handle li b{color:#fff;font-weight:700}
+.handle svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr}}
+
+/* solutions tabs */
+.solutions{background:var(--tint)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tabs button{font:600 15px var(--f-head);border:1px solid var(--line);background:#fff;color:var(--ink);padding:12px 20px;border-radius:999px;cursor:pointer;min-height:46px}
+.tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tabpanel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:36px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+.tabpanel h3{font-size:26px}
+.tabpanel>div{min-width:0}
+.tabpanel p{color:var(--muted);margin-top:10px}
+.feat{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.feat li{display:flex;gap:10px}
+.feat svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:3px}
+.spec{background:var(--tint);border-radius:12px;padding:22px;display:grid;gap:14px;align-content:start}
+.spec div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+.spec div:last-of-type{border-bottom:0;padding-bottom:0}
+.spec span{color:var(--muted);font-size:15px}
+.spec b{font:600 15px var(--f-head);color:var(--navy);text-align:right}
+.spec .btn{margin-top:6px}
+@media (max-width:860px){.tabpanel{grid-template-columns:1fr;padding:24px}.feat{grid-template-columns:1fr}}
+
+/* process */
+.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:p}
+.process li{counter-increment:p;position:relative;padding-top:64px;min-width:0}
+.process li::before{content:"0" counter(p);position:absolute;top:0;left:0;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:700 16px var(--f-head)}
+.process li::after{content:"";position:absolute;top:24px;left:60px;right:-10px;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.process li:last-child::after{display:none}
+.process p{color:var(--muted);margin-top:8px;font-size:16px}
+@media (max-width:900px){.process{grid-template-columns:1fr 1fr}.process li::after{display:none}}
+@media (max-width:520px){.process{grid-template-columns:1fr}}
+
+/* calculator */
+.calc-sec{background:var(--navy);color:var(--on-navy)}
+.calc-sec h2{color:#fff}
+.calc-sec .lead{color:var(--on-navy-muted)}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:#fff;color:var(--ink);border-radius:16px;padding:30px;min-width:0}
+.seg{display:inline-flex;background:var(--tint-2);border-radius:999px;padding:4px;gap:4px;margin-bottom:24px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:600 15px var(--f-head);padding:8px 18px;border-radius:999px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.fl{display:block;font:600 15px var(--f-head);margin-bottom:4px}
+.billrow{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.billrow output{font:700 44px var(--f-head);color:var(--navy);font-variant-numeric:tabular-nums}
+.billrow small{color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--accent);height:32px}
+.ends{display:flex;justify-content:space-between;color:var(--muted);font-size:14px}
+.assume{color:var(--muted);font-size:14px;margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.res div{background:var(--tint);border-radius:10px;padding:16px 18px}
+.res span{display:block;color:var(--muted);font-size:14px}
+.res strong{font:700 26px var(--f-head);color:var(--navy);font-variant-numeric:tabular-nums}
+.res .hi{background:var(--accent-soft)}
+.res .hi strong{color:var(--accent-dark)}
+.res .ok strong{color:var(--green)}
+.res .w{grid-column:1/-1}
+.card .btn{width:100%;margin-top:18px}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+@media (max-width:420px){.res strong{font-size:22px}.card{padding:22px}}
+
+/* subsidy */
+.sub{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line)}
+th{font:600 14px var(--f-head);color:var(--muted);background:var(--tint);text-transform:uppercase;letter-spacing:.06em}
+tr:last-child td{border-bottom:0}
+td.amt{font:700 19px var(--f-head);color:var(--green)}
+.elig{background:var(--tint);border-radius:14px;padding:28px}
+.elig h3{margin-bottom:14px}
+.elig ul{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--muted)}
+.elig .src{margin-top:16px;font-size:14px;color:var(--muted)}
+@media (max-width:860px){.sub{grid-template-columns:1fr}}
+
+/* components */
+.comp{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.comp article{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff;min-width:0}
+.comp .ic{width:52px;height:52px;border-radius:12px;background:var(--navy);color:var(--gold);display:grid;place-items:center;margin-bottom:16px}
+.comp .ic svg{width:26px;height:26px}
+.comp p{color:var(--muted);margin-top:8px;font-size:16px}
+@media (max-width:1000px){.comp{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.comp{grid-template-columns:1fr}}
+
+/* faq */
+.faq-sec{background:var(--tint)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.faq{display:grid;gap:10px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 22px}
+summary{cursor:pointer;font:600 17px var(--f-head);padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--navy)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:600 24px var(--f-head);color:var(--accent);line-height:1}
+details[open] summary::after{content:"−"}
+details p{padding-bottom:20px;color:var(--muted)}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:24px}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.cinfo{display:grid;gap:14px}
+.crow{display:flex;gap:16px;align-items:flex-start;padding:18px;border:1px solid var(--line);border-radius:12px}
+.crow .ic{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.crow .ic svg{width:22px;height:22px}
+.crow span{display:block;color:var(--muted);font-size:14px}
+.crow b{font:600 17px var(--f-head);color:var(--navy);word-break:break-word}
+.crow b.ph{font-weight:500;font-style:italic;color:var(--muted)}
+form.card{border:1px solid var(--line);box-shadow:0 20px 40px rgba(11,42,91,.08);display:grid;gap:16px}
+form h3{margin-bottom:2px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form label{display:grid;gap:6px;font:600 14px var(--f-head);color:var(--ink)}
+input[type=text],input[type=tel],input[type=number],select,textarea{font:400 16px var(--f-body);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:11px 13px;min-height:48px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--navy);outline:2px solid rgba(11,42,91,.15)}
+textarea{min-height:96px;resize:vertical}
+.preview{background:var(--tint);border-radius:8px;padding:12px 14px;font-size:14px;white-space:pre-wrap;color:var(--muted)}
+.small{font-size:13px;color:var(--muted)}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+@media (max-width:480px){.f2{grid-template-columns:1fr}}
+
+/* cta band */
+.cta-band{background:linear-gradient(100deg,var(--accent) 0%,#F79A2E 100%);color:#fff;padding-block:44px}
+.cta-band .wrap{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;justify-content:space-between}
+.cta-band h2{color:#fff;font-size:clamp(24px,3vw,32px)}
+.cta-band p{opacity:.92;margin-top:6px}
+.cta-band .btn{background:#fff;color:var(--accent-dark)}
+.cta-band .btn:hover{background:var(--navy);color:#fff}
+
+/* footer */
+footer{background:#081F45;color:var(--on-navy-muted);font-size:15px}
+footer .wrap{padding-block:56px 0}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
+footer h4{color:#fff;font-size:16px;margin-bottom:14px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer .brand b{color:#fff}
+footer .brand small{color:var(--on-navy-muted)}
+footer .about-t{margin-top:14px;max-width:34ch}
+.fbot{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-block:20px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:14px}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fgrid{grid-template-columns:1fr}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+<radialGradient id="bsSun" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FFF3B0"/><stop offset=".55" stop-color="#FFC20E"/><stop offset="1" stop-color="#F47B20"/></radialGradient>
+<linearGradient id="bsPan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F6FD6"/><stop offset="1" stop-color="#0A2460"/></linearGradient>
+<linearGradient id="bsArc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFC20E"/><stop offset="1" stop-color="#F47B20"/></linearGradient>
+</defs>
+  <symbol id="bs-icon" viewBox="-175 -155 350 340"><path fill="#F47B20" d="M-92.0,-13.0L-138.6,-29.9L-89.1,-33.0Z"/><path fill="#F47B20" d="M-87.4,-38.8L-127.3,-68.2L-79.0,-57.2Z"/><path fill="#F47B20" d="M-75.7,-62.3L-105.8,-101.7L-62.5,-77.5Z"/><path fill="#F47B20" d="M-57.9,-81.5L-75.7,-127.8L-40.9,-92.4Z"/><path fill="#F47B20" d="M-35.5,-94.9L-39.4,-144.3L-16.1,-100.6Z"/><path fill="#F47B20" d="M-10.1,-101.4L0.0,-150.0L10.1,-101.4Z"/><path fill="#F47B20" d="M16.1,-100.6L39.4,-144.3L35.5,-94.9Z"/><path fill="#F47B20" d="M40.9,-92.4L75.7,-127.8L57.9,-81.5Z"/><path fill="#F47B20" d="M62.5,-77.5L105.8,-101.7L75.7,-62.3Z"/><path fill="#F47B20" d="M79.0,-57.2L127.3,-68.2L87.4,-38.8Z"/><path fill="#F47B20" d="M89.1,-33.0L138.6,-29.9L92.0,-13.0Z"/><circle cx="0" cy="-10.0" r="80.0" fill="url(#bsSun)"/><path d="M-150.0,105.0 L105.0,105.0 L150.0,5.0 L-105.0,5.0Z" fill="url(#bsPan)"/><path d="M-99.0,105.0L-54.0,5.0M-48.0,105.0L-3.0,5.0M3.0,105.0L48.0,5.0M54.0,105.0L99.0,5.0M-135.0,71.7L120.0,71.7M-120.0,38.3L135.0,38.3" stroke="rgba(190,215,255,.75)" stroke-width="3.1" fill="none"/><path d="M-150.0,105.0 L105.0,105.0 L150.0,5.0 L-105.0,5.0Z" fill="none" stroke="#FFFFFF" stroke-width="7.0" stroke-linejoin="round"/><path d="M-165.0,135.0 Q0,175.0 170.0,112.0 Q0,152.0 -165.0,135.0Z" fill="url(#bsArc)"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".15"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-survey" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><circle cx="12" cy="14" r="2.5"/><path d="M14 16l2 2"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 14l3 3 5-6"/></g></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 5h14l2 10H3z"/><path d="M4 10h16M9.5 5l-.8 10M14.5 5l.8 10M12 15v4M8 19h8"/></g></symbol>
+  <symbol id="i-inverter" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="8" y="7" width="8" height="4" rx="1"/><path d="M8 15h2M14 15h2M12 21v-3"/></g></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20l5-14M19 20l-5-14M10 6h4M7 14h10"/></g></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></symbol>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><svg><use href="#i-phone"/></svg><b data-biz="phone"></b></span>
+    <span class="hide-sm"><svg><use href="#i-mail"/></svg><b data-biz="email"></b></span>
+    <span class="grow"><svg><use href="#i-clock"/></svg><b data-biz="hours"></b></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Balaji Solaar home"><svg><use href="#bs-icon"/></svg><div><b>BALAJI <span>SOLAAR</span></b><small>SOLAR ENERGY SOLUTIONS</small></div></a>
+    <nav class="main" aria-label="Main">
+      <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#calculator">Calculator</a><a href="#subsidy">Subsidy</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Book Free Site Visit</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Rooftop solar for homes, shops &amp; factories</p>
+      <h1 id="hero-h" style="margin-top:14px">Power your home with the sun and <span>cut your electricity bill</span></h1>
+      <p class="lead">Balaji Solaar designs, installs and maintains on-grid solar systems. We take care of the site survey, net-metering and your PM Surya Ghar subsidy application, so you only have to decide where the savings go.</p>
+      <ul class="ticks">
+        <li><svg><use href="#i-check"/></svg>Up to ₹78,000 government subsidy for homes</li>
+        <li><svg><use href="#i-check"/></svg>Net-meter and DISCOM paperwork handled by us</li>
+        <li><svg><use href="#i-check"/></svg>Service and cleaning support after installation</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact">Book Free Site Visit</a>
+        <a class="btn btn-outline" href="#calculator">Calculate Your Savings</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 560 470" role="img" aria-label="House with rooftop solar panels under the sun">
+<defs>
+<linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6E7FF"/><stop offset="1" stop-color="#F6FAFF"/></linearGradient>
+<radialGradient id="hSun" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FFF3B0"/><stop offset=".55" stop-color="#FFC20E"/><stop offset="1" stop-color="#F47B20"/></radialGradient>
+<linearGradient id="hPan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A78DC"/><stop offset="1" stop-color="#0C2A6B"/></linearGradient>
+<linearGradient id="hRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C46A44"/><stop offset="1" stop-color="#9E4F30"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="560" height="470" rx="28" fill="url(#hSky)"/><path fill="#F9A23B" opacity=".85" d="M512.8,86.8L529.0,92.0L512.8,97.2Z"/><path fill="#F9A23B" opacity=".85" d="M509.3,112.4L530.7,128.4L504.8,121.8Z"/><path fill="#F9A23B" opacity=".85" d="M495.1,133.9L501.1,149.9L486.9,140.4Z"/><path fill="#F9A23B" opacity=".85" d="M472.9,147.2L473.7,173.9L462.8,149.5Z"/><path fill="#F9A23B" opacity=".85" d="M447.2,149.5L438.5,164.1L437.1,147.2Z"/><path fill="#F9A23B" opacity=".85" d="M423.1,140.4L402.6,157.7L414.9,133.9Z"/><path fill="#F9A23B" opacity=".85" d="M405.2,121.8L388.3,124.1L400.7,112.4Z"/><path fill="#F9A23B" opacity=".85" d="M397.2,97.2L371.0,92.0L397.2,86.8Z"/><path fill="#F9A23B" opacity=".85" d="M400.7,71.6L388.3,59.9L405.2,62.2Z"/><path fill="#F9A23B" opacity=".85" d="M414.9,50.1L402.6,26.3L423.1,43.6Z"/><path fill="#F9A23B" opacity=".85" d="M437.1,36.8L438.5,19.9L447.2,34.5Z"/><path fill="#F9A23B" opacity=".85" d="M462.8,34.5L473.7,10.1L472.9,36.8Z"/><path fill="#F9A23B" opacity=".85" d="M486.9,43.6L501.1,34.1L495.1,50.1Z"/><path fill="#F9A23B" opacity=".85" d="M504.8,62.2L530.7,55.6L509.3,71.6Z"/><circle cx="455" cy="92" r="48" fill="url(#hSun)"/><g fill="#FFFFFF" opacity=".95"><ellipse cx="120" cy="90" rx="48.0" ry="18.0"/><ellipse cx="93.6" cy="93.6" rx="31.2" ry="14.399999999999999"/><ellipse cx="124.8" cy="78.0" rx="28.799999999999997" ry="18.0"/></g><g fill="#FFFFFF" opacity=".95"><ellipse cx="300" cy="60" rx="32.0" ry="12.0"/><ellipse cx="282.4" cy="62.4" rx="20.8" ry="9.600000000000001"/><ellipse cx="303.2" cy="52.0" rx="19.200000000000003" ry="12.0"/></g><path d="M0,392 Q280,372 560,392 L560,442 Q560,470 532,470 L28,470 Q0,470 0,442Z" fill="#DCEBD3"/><ellipse cx="300" cy="404" rx="250" ry="12" fill="#C5DABA"/><path d="M84,262 L170,186 L256,262 L256,402 L84,402Z" fill="#FFFFFF" stroke="#C9D5E6" stroke-width="2"/><rect x="256" y="262" width="250" height="140" fill="#EEF3FA" stroke="#C9D5E6" stroke-width="2"/><path d="M170,186 L420,186 L518,266 L256,266Z" fill="url(#hRoof)"/><path d="M78,266 L170,182 L262,266" fill="none" stroke="#8A4428" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M205.1,198.9L243.1,198.9L268.1,221.0L230.1,221.0Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M214.6,198.9L239.6,221.0M224.1,198.9L249.1,221.0M233.6,198.9L258.6,221.0M217.6,209.9L255.6,209.9" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M249.1,198.9L287.1,198.9L312.1,221.0L274.1,221.0Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M258.6,198.9L283.6,221.0M268.1,198.9L293.1,221.0M277.6,198.9L302.6,221.0M261.6,209.9L299.6,209.9" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M293.1,198.9L331.1,198.9L356.1,221.0L318.1,221.0Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M302.6,198.9L327.6,221.0M312.1,198.9L337.1,221.0M321.6,198.9L346.6,221.0M305.6,209.9L343.6,209.9" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M337.1,198.9L375.1,198.9L400.1,221.0L362.1,221.0Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M346.6,198.9L371.6,221.0M356.1,198.9L381.1,221.0M365.6,198.9L390.6,221.0M349.6,209.9L387.6,209.9" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M381.1,198.9L419.1,198.9L444.1,221.0L406.1,221.0Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M390.6,198.9L415.6,221.0M400.1,198.9L425.1,221.0M409.6,198.9L434.6,221.0M393.6,209.9L431.6,209.9" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M238.7,228.6L276.7,228.6L301.6,250.6L263.6,250.6Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M248.2,228.6L273.1,250.6M257.7,228.6L282.6,250.6M267.2,228.6L292.1,250.6M251.1,239.6L289.1,239.6" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M282.7,228.6L320.7,228.6L345.6,250.6L307.6,250.6Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M292.2,228.6L317.1,250.6M301.7,228.6L326.6,250.6M311.2,228.6L336.1,250.6M295.1,239.6L333.1,239.6" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M326.7,228.6L364.7,228.6L389.6,250.6L351.6,250.6Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M336.2,228.6L361.1,250.6M345.7,228.6L370.6,250.6M355.2,228.6L380.1,250.6M339.1,239.6L377.1,239.6" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M370.7,228.6L408.7,228.6L433.6,250.6L395.6,250.6Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M380.2,228.6L405.1,250.6M389.7,228.6L414.6,250.6M399.2,228.6L424.1,250.6M383.1,239.6L421.1,239.6" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M414.7,228.6L452.7,228.6L477.6,250.6L439.6,250.6Z" fill="url(#hPan)" stroke="#E8EEF7" stroke-width="2"/><path d="M424.2,228.6L449.1,250.6M433.7,228.6L458.6,250.6M443.2,228.6L468.1,250.6M427.1,239.6L465.1,239.6" stroke="#9DBDF0" stroke-opacity=".55" stroke-width="1"/><path d="M300,192 L330,192 L300,258 L270,258Z" fill="#FFFFFF" opacity=".18"/><rect x="150" y="330" width="44" height="72" rx="4" fill="#0B2A5B"/><circle cx="185" cy="368" r="3" fill="#FFC20E"/><rect x="104" y="290" width="36" height="36" rx="4" fill="#BFD6F5" stroke="#0B2A5B" stroke-width="3"/><rect x="206" y="290" width="36" height="36" rx="4" fill="#BFD6F5" stroke="#0B2A5B" stroke-width="3"/><circle cx="170" cy="236" r="14" fill="#BFD6F5" stroke="#0B2A5B" stroke-width="3"/><rect x="290" y="296" width="56" height="44" rx="4" fill="#BFD6F5" stroke="#0B2A5B" stroke-width="3"/><path d="M318,296V340" stroke="#0B2A5B" stroke-width="2"/><rect x="370" y="296" width="56" height="44" rx="4" fill="#BFD6F5" stroke="#0B2A5B" stroke-width="3"/><path d="M398,296V340" stroke="#0B2A5B" stroke-width="2"/><rect x="452" y="300" width="34" height="46" rx="5" fill="#FFFFFF" stroke="#0B2A5B" stroke-width="2.5"/><rect x="459" y="308" width="20" height="10" rx="2" fill="#7CD992"/><path d="M469,300 V270" stroke="#0B2A5B" stroke-width="2.5"/><g fill="#6BA35A"><ellipse cx="62" cy="392" rx="22" ry="16"/><ellipse cx="530" cy="394" rx="18" ry="13"/></g></svg>
+      <div class="tag t1"><strong>3 kW system</strong>≈ 360 units / month</div>
+      <div class="tag t2"><strong>₹78,000</strong>max. subsidy for homes</div>
+    </div>
+  </div>
+</section>
+
+<section class="strip" aria-label="Why customers choose us">
+  <div class="wrap">
+    <div><span class="ic"><svg><use href="#i-survey"/></svg></span><p><b>Free site survey</b><span>Roof, shade and load checked on site</span></p></div>
+    <div><span class="ic"><svg><use href="#i-doc"/></svg></span><p><b>Subsidy assistance</b><span>Portal registration to bank credit</span></p></div>
+    <div><span class="ic"><svg><use href="#i-shield"/></svg></span><p><b>Quality components</b><span>ALMM-listed panels, branded inverters</span></p></div>
+    <div><span class="ic"><svg><use href="#i-wrench"/></svg></span><p><b>After-sales service</b><span>Cleaning, check-ups and repairs</span></p></div>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div>
+      <p class="kicker">About Balaji Solaar</p>
+      <h2 id="about-h" style="margin-top:10px">Your local partner for clean, affordable solar power</h2>
+      <p class="lead" style="margin-top:16px">Going solar involves more than buying panels. A system has to suit your roof, your load and your DISCOM's rules, and the subsidy has its own paperwork.</p>
+      <p>Balaji Solaar handles the whole job in one place. We inspect your site, design a system around your actual consumption, install it with proper earthing and protection, get the net meter connected, and stay with you for service after the handover.</p>
+      <p>Every system is quoted in writing after the survey, with the panel, inverter and structure specifications listed, so you know exactly what you are paying for.</p>
+    </div>
+    <div class="handle">
+      <h3>What we take care of</h3>
+      <ul>
+        <li><svg><use href="#i-check"/></svg><span><b>Site survey and load study.</b> Usable roof area, shading and your past bills.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>System design and quotation.</b> Right capacity, layout and components.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Installation.</b> Structure, panels, inverter, wiring, earthing and lightning protection.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Net-metering.</b> DISCOM application, inspection and meter installation.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Subsidy.</b> PM Surya Ghar registration and claim for residential systems.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>After-sales.</b> Cleaning, performance checks and service visits.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="solutions" id="solutions" aria-labelledby="sol-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">Our solutions</p><h2 id="sol-h">Solar solutions for every need</h2></div>
+    <div class="tabs" role="tablist" aria-label="Solutions">
+      <button role="tab" id="tab-0" aria-controls="panel" aria-selected="true">Residential Rooftop</button>
+      <button role="tab" id="tab-1" aria-controls="panel" aria-selected="false">Commercial &amp; Industrial</button>
+      <button role="tab" id="tab-2" aria-controls="panel" aria-selected="false">Subsidy Assistance</button>
+      <button role="tab" id="tab-3" aria-controls="panel" aria-selected="false">Maintenance &amp; Service</button>
+    </div>
+    <div class="tabpanel" id="panel" role="tabpanel" aria-labelledby="tab-0">
+      <div>
+        <h3 id="sol-title"></h3>
+        <p id="sol-desc"></p>
+        <ul class="feat" id="sol-feat"></ul>
+      </div>
+      <div class="spec" id="sol-spec"></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">How it works</p><h2 id="proc-h">From first call to switched on, in four steps</h2></div>
+    <ol class="process">
+      <li><h3>Site survey &amp; energy audit</h3><p>We visit your property, check roof condition and shading, and study your last few electricity bills.</p></li>
+      <li><h3>Design &amp; quotation</h3><p>You get a written quote with system size, layout, component brands and expected generation.</p></li>
+      <li><h3>Installation &amp; net-metering</h3><p>Our team installs the system and completes the DISCOM inspection and net-meter connection.</p></li>
+      <li><h3>Subsidy &amp; support</h3><p>For homes we file the subsidy claim. After handover we remain your point of contact for service.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="calc-sec" id="calculator" aria-labelledby="calc-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker" style="color:var(--gold)">Savings calculator</p><h2 id="calc-h">How much solar do you need?</h2><p class="lead">Move the slider to your average monthly electricity bill to see a recommended system size, expected savings and subsidy.</p></div>
+    <div class="calc">
+      <div class="card">
+        <div class="seg" role="group" aria-label="Property type">
+          <button type="button" id="t-home" aria-pressed="true">Home</button>
+          <button type="button" id="t-biz" aria-pressed="false">Shop / Factory</button>
+        </div>
+        <label class="fl" for="bill">Average monthly electricity bill</label>
+        <div class="billrow"><output id="billOut" for="bill">₹3,000</output><small>per month</small></div>
+        <input type="range" id="bill" min="500" max="50000" step="100" value="3000">
+        <div class="ends"><span>₹500</span><span>₹50,000</span></div>
+        <p class="assume">Estimates assume an average tariff of ₹7 per unit and about 120 units generated per kW each month. Fixed charges on your bill continue. Exact figures are given after the site survey.</p>
+      </div>
+      <div class="card" aria-live="polite">
+        <div class="res">
+          <div><span>Recommended system</span><strong id="rKw">3 kW</strong></div>
+          <div><span>Roof area needed</span><strong id="rArea">300 sq ft</strong></div>
+          <div><span>Monthly generation</span><strong id="rUnits">360 units</strong></div>
+          <div class="hi"><span>Monthly savings</span><strong id="rSave">₹2,520</strong></div>
+          <div class="ok"><span id="rSubLbl">PM Surya Ghar subsidy</span><strong id="rSub">₹78,000</strong></div>
+          <div><span>Yearly savings</span><strong id="rYear">₹30,240</strong></div>
+          <div class="w"><span>CO₂ avoided per year</span><strong id="rCo2">3.5 tonnes</strong></div>
+        </div>
+        <a class="btn btn-primary" href="#contact" id="calcCta">Get a Quote for This System</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="subsidy" aria-labelledby="sub-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">PM Surya Ghar: Muft Bijli Yojana</p><h2 id="sub-h">Government subsidy for residential rooftop solar</h2></div>
+    <div class="sub">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>System capacity</th><th>Central financial assistance</th></tr></thead>
+          <tbody>
+            <tr><td>1 kW</td><td class="amt">₹30,000</td></tr>
+            <tr><td>2 kW</td><td class="amt">₹60,000</td></tr>
+            <tr><td>3 kW and above</td><td class="amt">₹78,000 (maximum)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="elig">
+        <h3>Who is eligible</h3>
+        <ul>
+          <li>Residential households with their own roof and an electricity connection in their name.</li>
+          <li>Panels must be domestically manufactured (DCR) and ALMM-listed.</li>
+          <li>The subsidy is credited to your bank account after installation, inspection and net-metering.</li>
+          <li>Shops, offices and factories are not covered by this scheme.</li>
+        </ul>
+        <p class="src">Scheme rules can change. Check the latest details at pmsuryaghar.gov.in or ask us during your site visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" aria-labelledby="comp-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">What goes on your roof</p><h2 id="comp-h">Components built to last 25 years</h2></div>
+    <div class="comp">
+      <article><div class="ic"><svg><use href="#i-panel"/></svg></div><h3>Solar panels</h3><p>High-efficiency ALMM-listed modules with the manufacturer's 25-year performance warranty. DCR panels for subsidy projects.</p></article>
+      <article><div class="ic"><svg><use href="#i-inverter"/></svg></div><h3>Inverter</h3><p>On-grid string inverters from established brands, sized to your system, with app-based generation monitoring.</p></article>
+      <article><div class="ic"><svg><use href="#i-frame"/></svg></div><h3>Mounting structure</h3><p>Hot-dip galvanised steel structure, designed for your roof type and local wind conditions.</p></article>
+      <article><div class="ic"><svg><use href="#i-bolt"/></svg></div><h3>Wiring &amp; safety</h3><p>UV-resistant DC cable, AC and DC protection boxes, proper earthing and a lightning arrester.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="faq-sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div class="sec-head" style="margin:0"><p class="kicker">FAQ</p><h2 id="faq-h">Questions we hear most often</h2><p class="lead">Something else on your mind? Send us a message on WhatsApp and we will answer.</p><a class="btn btn-outline" href="#contact" style="justify-self:start;margin-top:8px">Ask a Question</a></div>
+    <div class="faq">
+      <details open><summary>How much roof space do I need?</summary><p>Plan for about 100 sq ft of shade-free roof for every 1 kW. A typical 3 kW home system needs around 300 sq ft.</p></details>
+      <details><summary>Will solar work on cloudy or rainy days?</summary><p>Yes, at a lower output. With an on-grid system, any shortfall is drawn from the grid and surplus on sunny days is exported, so it balances out over the year through net-metering.</p></details>
+      <details><summary>Does an on-grid system work during a power cut?</summary><p>No. For safety, an on-grid inverter shuts down when grid power fails. If you need backup during outages, ask us about a hybrid system with batteries.</p></details>
+      <details><summary>How long does installation take?</summary><p>Installation of a home system usually takes one to two days. Net-meter connection depends on the DISCOM's inspection schedule; we follow up on your behalf.</p></details>
+      <details><summary>When will I receive the subsidy?</summary><p>The subsidy is released after the system is installed, inspected and the net meter is connected. It is credited directly to the bank account linked in your application.</p></details>
+      <details><summary>How often should the panels be cleaned?</summary><p>Rinse the panels with plain water every two to four weeks, more often in dusty months. Avoid detergents and hard brushes. We also offer cleaning visits.</p></details>
+      <details><summary>Are loans available?</summary><p>Yes. Several banks offer rooftop solar loans for homes under the PM Surya Ghar scheme. We can guide you through the options when you apply.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Book a visit">
+  <div class="wrap">
+    <div><h2>Ready to switch to solar?</h2><p>Book a free site visit and get a written quote for your roof.</p></div>
+    <a class="btn" href="#contact">Book Free Site Visit</a>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="ct-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">Contact us</p><h2 id="ct-h">Get your free solar consultation</h2><p class="lead">Fill in a few details and send them to us on WhatsApp. We usually reply the same day.</p></div>
+    <div class="contact">
+      <div class="cinfo">
+        <div class="crow"><span class="ic"><svg><use href="#i-phone"/></svg></span><div><span>Phone / WhatsApp</span><b data-biz="phone"></b></div></div>
+        <div class="crow"><span class="ic"><svg><use href="#i-mail"/></svg></span><div><span>Email</span><b data-biz="email"></b></div></div>
+        <div class="crow"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><span>Office address</span><b data-biz="address"></b></div></div>
+        <div class="crow"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><span>Working hours</span><b data-biz="hours"></b></div></div>
+      </div>
+      <form class="card" id="lead" novalidate>
+        <h3>Request a free site visit</h3>
+        <div class="f2">
+          <label for="fName">Full name<input type="text" id="fName" autocomplete="name" placeholder="e.g. Ramesh Patel"></label>
+          <label for="fPhone">Mobile number<input type="tel" id="fPhone" autocomplete="tel" placeholder="e.g. 98765 43210"></label>
+        </div>
+        <div class="f2">
+          <label for="fCity">City / village<input type="text" id="fCity" placeholder="e.g. Gandhinagar"></label>
+          <label for="fType">Property type<select id="fType"><option>Home</option><option>Shop / Office</option><option>Factory</option></select></label>
+        </div>
+        <div class="f2">
+          <label for="fBill">Monthly bill (₹)<input type="number" id="fBill" inputmode="numeric" min="0" placeholder="3000"></label>
+          <label for="fKw">Preferred size<select id="fKw"><option>Not sure</option><option>1–3 kW</option><option>3–5 kW</option><option>5–10 kW</option><option>10 kW+</option></select></label>
+        </div>
+        <label for="fMsg">Message (optional)<textarea id="fMsg" placeholder="e.g. Terrace is about 600 sq ft. Saturday works for a visit."></textarea></label>
+        <div><span class="fl">Your WhatsApp message</span><div class="preview" id="fPreview"></div></div>
+        <a class="btn btn-wa" id="waBtn" href="https://wa.me/" target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg>Send on WhatsApp</a>
+        <p class="small">Opens WhatsApp with your message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top"><svg><use href="#bs-icon"/></svg><div><b>BALAJI <span>SOLAAR</span></b><small>SOLAR ENERGY SOLUTIONS</small></div></a>
+        <p class="about-t">Rooftop solar design, installation, subsidy assistance and maintenance for homes, shops and factories.</p>
+      </div>
+      <div><h4>Quick links</h4><ul><li><a href="#about">About us</a></li><li><a href="#calculator">Solar calculator</a></li><li><a href="#subsidy">Subsidy</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Solutions</h4><ul><li><a href="#solutions">Residential rooftop</a></li><li><a href="#solutions">Commercial &amp; industrial</a></li><li><a href="#solutions">Subsidy assistance</a></li><li><a href="#solutions">Maintenance &amp; service</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li data-biz="phone"></li><li data-biz="email"></li><li data-biz="address"></li></ul></div>
+    </div>
+    <div class="fbot"><span>© 2026 Balaji Solaar. All rights reserved.</span><span>Clean energy for a brighter tomorrow.</span></div>
+  </div>
+</footer>
+
+<script>
+/* ===== Business details: fill these in ===== */
+const BIZ = {
+  phone: "+91 74330 35294",
+  whatsapp: "917433035294",
+  email: "balajisolar2701@gmail.com",
+  address: "",    // e.g. "Shop 5, ..., Gandhinagar, Gujarat"
+  hours: "Mon – Sat, 9:00 AM – 7:00 PM"
+};
+const PH = {phone:"Your phone number", email:"Your email address", address:"Your office address", hours:"Working hours"};
+(function(){
+  const $=id=>document.getElementById(id);
+  document.querySelectorAll('[data-biz]').forEach(el=>{const k=el.dataset.biz,v=BIZ[k];el.textContent=v||PH[k];el.classList.toggle('ph',!v);});
+
+  /* solutions tabs */
+  const SOL=[
+    {t:"Residential Rooftop Solar",d:"On-grid rooftop systems for bungalows, row houses and independent homes. Designed around your consumption so you get the best return and the full PM Surya Ghar subsidy.",
+     f:["Net-metering with your DISCOM","Subsidy-eligible DCR panels","App-based generation monitoring","Tidy cable routing and earthing","Structure suited to RCC or sheet roofs","Written quote after site survey"],
+     s:[["Typical size","1 kW – 10 kW"],["Ideal for","Homes and bungalows"],["Subsidy","Up to ₹78,000"],["Roof area","≈ 100 sq ft per kW"]]},
+    {t:"Commercial & Industrial Solar",d:"Larger systems for shops, offices, schools, hospitals, warehouses and factories. Most commercial power is used during the day, which is exactly when solar produces.",
+     f:["Designed for daytime load profiles","Load study from past bills","Commercial-grade string inverters","Structural check for sheds and RCC roofs","Remote monitoring of generation","Scalable for future expansion"],
+     s:[["Typical size","10 kW and above"],["Ideal for","Shops, offices, factories"],["Benefit","Lower daytime energy cost"],["Survey","Load and structure audit"]]},
+    {t:"Subsidy Assistance",d:"The PM Surya Ghar scheme pays up to ₹78,000 for residential rooftop solar. We handle the application end to end so the subsidy reaches your account without running around.",
+     f:["Registration on the national portal","Document checklist and upload","DISCOM feasibility approval","Inspection and commissioning report","Net-meter installation follow-up","Subsidy claim submission"],
+     s:[["1 kW","₹30,000"],["2 kW","₹60,000"],["3 kW and above","₹78,000"],["Eligible","Residential only"]]},
+    {t:"Maintenance & Service",d:"A clean, well-maintained system produces more power for longer. We service systems installed by us as well as by other installers.",
+     f:["Panel cleaning visits","Inverter health and error checks","Loose connection and cable checks","Earthing and protection testing","Generation report review","Breakdown support"],
+     s:[["Cleaning","Every 2 – 4 weeks advised"],["Health check","Twice a year"],["Covers","Our and other installs"],["Booking","Phone or WhatsApp"]]}
+  ];
+  const tabs=[...document.querySelectorAll('[role=tab]')];
+  const chk='<svg><use href="#i-check"/></svg>';
+  function showTab(i){
+    tabs.forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1;});
+    const s=SOL[i];$('panel').setAttribute('aria-labelledby','tab-'+i);
+    $('sol-title').textContent=s.t;$('sol-desc').textContent=s.d;
+    $('sol-feat').innerHTML=s.f.map(x=>`<li>${chk}<span>${x}</span></li>`).join('');
+    $('sol-spec').innerHTML=s.s.map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join('')+'<a class="btn btn-primary" href="#contact">Get Free Consultation</a>';
+  }
+  tabs.forEach((b,i)=>{b.addEventListener('click',()=>showTab(i));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;showTab(n);tabs[n].focus();}});});
+  showTab(0);
+
+  /* calculator */
+  const fmt=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+  const TARIFF=7, PER_KW=120, CO2=0.82; // kg CO2 per unit (grid average)
+  let type='home';
+  const subsidy=kw=>kw<=2?30000*kw:kw<3?60000+18000*(kw-2):78000;
+  function calc(){
+    const bill=+$('bill').value;$('billOut').textContent=fmt(bill);
+    const units=bill/TARIFF;
+    let kw=Math.max(1,Math.round(units/PER_KW*2)/2);
+    if(type==='home')kw=Math.min(kw,10);
+    const gen=kw*PER_KW,save=Math.min(Math.min(gen,units)*TARIFF,bill*0.9);
+    $('rKw').textContent=kw+' kW';
+    $('rArea').textContent=Math.round(kw*100).toLocaleString('en-IN')+' sq ft';
+    $('rUnits').textContent=Math.round(gen).toLocaleString('en-IN')+' units';
+    $('rSave').textContent=fmt(save);$('rYear').textContent=fmt(save*12);
+    $('rCo2').textContent=(gen*12*CO2/1000).toFixed(1)+' tonnes';
+    if(type==='home'){$('rSubLbl').textContent='PM Surya Ghar subsidy';$('rSub').textContent=fmt(subsidy(kw));}
+    else{$('rSubLbl').textContent='Government subsidy';$('rSub').textContent='Not applicable';}
+    $('calcCta').dataset.kw=kw;
+  }
+  function setType(t){type=t;$('t-home').setAttribute('aria-pressed',t==='home');$('t-biz').setAttribute('aria-pressed',t!=='home');calc();}
+  $('t-home').addEventListener('click',()=>setType('home'));
+  $('t-biz').addEventListener('click',()=>setType('biz'));
+  $('bill').addEventListener('input',calc);
+  $('calcCta').addEventListener('click',()=>{
+    $('fBill').value=$('bill').value;$('fType').value=type==='home'?'Home':'Shop / Office';
+    const kw=+$('calcCta').dataset.kw;$('fKw').value=kw<=3?'1–3 kW':kw<=5?'3–5 kW':kw<=10?'5–10 kW':'10 kW+';buildMsg();
+  });
+
+  /* whatsapp lead form */
+  function buildMsg(){
+    const v=id=>$(id).value.trim();
+    const L=['Hello Balaji Solaar,','I would like a free site visit and quotation for a solar system.',''];
+    if(v('fName'))L.push('Name: '+v('fName'));
+    if(v('fPhone'))L.push('Mobile: '+v('fPhone'));
+    if(v('fCity'))L.push('City: '+v('fCity'));
+    L.push('Property: '+$('fType').value);
+    if(v('fBill'))L.push('Monthly bill: ₹'+v('fBill'));
+    if($('fKw').value!=='Not sure')L.push('Preferred size: '+$('fKw').value);
+    if(v('fMsg'))L.push('','Note: '+v('fMsg'));
+    const text=L.join('\n');$('fPreview').textContent=text;
+    $('waBtn').href='https://wa.me/'+(BIZ.whatsapp||'')+'?text='+encodeURIComponent(text);
+  }
+  ['fName','fPhone','fCity','fType','fBill','fKw','fMsg'].forEach(id=>$(id).addEventListener('input',buildMsg));
+  $('lead').addEventListener('submit',e=>e.preventDefault());
+  calc();buildMsg();
+})();
+</script>
+
+</body></html>
